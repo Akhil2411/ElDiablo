@@ -1,0 +1,104 @@
+:host .mat-icon 
+{
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+/* Use the :host pseudo-class selector to target styles in the element that hosts the component */
+/* rem=> It is Equal to the computed value of font-size on the root element. When specified on the font-size property of the root element, the rem units refer to the property’s initial value. */
+
+
+.logo 
+{
+    text-align: center;
+    padding: 2.6rem 1rem;
+    
+}
+/* targetting the container div of the image */
+
+
+.logo img 
+{
+    width: 200px;
+}
+/* changing the width of the image which is inside logo */
+
+
+
+.mat-icon
+{
+ vertical-align: center;
+ margin-right: 1rem;
+}
+/* Style the mat icon */
+
+
+.mat-divider
+{
+border-top-width: 2px;
+border-color: white;
+}
+/* Style the horizontal divider */
+
+
+
+.mat-list-item
+ {
+    color: #94a3b8 !important;
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+}
+/* styling the container of the links */
+
+
+.mat-list-item:hover 
+{
+    color: #f2f5f7 !important;
+}
+/* when hovering the colour of the text brightens */
+
+
+
+.mat-list-item ::ng-deep .mat-list-item-content 
+{
+    border-radius: 5px;
+    margin: 0 8px;
+}
+/* Use the ::ng-deep  to force a style down through the child component tree into all the child component views. */
+/* mat-list-item-content is actually the content in the tags...so we should use that class for styling even when we have not explicitely specified it */
+/* if you want to check this mat-list-item-content ..go and click inspect element and you can see */
+
+
+.mat-list-item ::ng-deep .mat-list-item-content:hover 
+{
+    background: #2c3344 !important;
+}
+/* a blue shaded box when hovering */
+
+
+.list-item-active 
+{
+    color: #f2f5f7 !important;
+}
+/* when the route is active..display this color for the text*/
+
+
+.list-item-active ::ng-deep .mat-list-item-content 
+{
+    background: #2c3344 !important;
+}
+/* when the route is active..display this color for the background of the text*/
+
+
+.list-item-active ::ng-deep .mat-list-item-content:hover 
+{
+    background: #2c3344 !important;
+}
+/* when the route is active..for the other links when hovering display this color*/
+
+.mat-subheader {
+    color: #818cf8;
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }

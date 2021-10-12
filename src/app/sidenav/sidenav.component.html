@@ -1,0 +1,24 @@
+
+<!-- we can use mat-nav-list for building or navigation tab -->
+
+<mat-nav-list>
+    <div class="logo py-4">
+        <!-- Here in th above div logo is a user defined class  -->
+        <img src="../assets/Eldiablo.png" alt="CompanyLogo">
+    </div>
+
+
+    <mat-divider></mat-divider>
+    <!-- mat-divider is just like hr tag which is used to divide the section -->
+
+
+    <h2 matSubheader class="mt-2">Applications</h2>
+     <!-- The property matSubheader is used to give a subheading to the link -->
+
+    <!-- add the router links..here list-item-active can be used in the css for styling -->
+    <a mat-list-item routerLink="/FoodMenu" routerLinkActive="list-item-active"><mat-icon>home</mat-icon> Food Menu</a>
+    <a mat-list-item routerLink="/AddItem" routerLinkActive="list-item-active"><mat-icon>note_add</mat-icon> Add Item</a>
+    <a mat-list-item routerLink="/AddSell" routerLinkActive="list-item-active"><mat-icon>shopping_cart</mat-icon> Add Sell</a>
+    <a mat-list-item routerLink="/SellReport" routerLinkActive="list-item-active"><mat-icon>description</mat-icon> Sell Report</a>
+   
+</mat-nav-list>
