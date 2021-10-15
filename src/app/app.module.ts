@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HomeComponent } from './home/home.component';
+import { FrontEndComponent } from './front-end/front-end.component';
 
 
 
@@ -39,6 +40,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     LogoutComponent,
     HomeComponent,
+    FrontEndComponent,
   
    
   ],
