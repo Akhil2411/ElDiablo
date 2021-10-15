@@ -1,0 +1,82 @@
+.page 
+{
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+}
+
+
+
+.page__box 
+{
+    min-height: 120px;
+    background: #1e293b;
+    margin: 0 -1rem;
+    font-size: 36px;
+}
+/* That rectangular background shade in the heading */
+
+
+
+.page__content 
+{
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 0.75rem;
+}
+/* Style the body part....subtract the height of the header and height of the rectangle from the height of page */
+
+
+.page__content-data 
+{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* center the text */
+
+
+.mat-icon
+{
+ vertical-align: center;
+ cursor: pointer;
+ /* margin-right: 1rem; */
+ font-size: 1.2rem;
+}
+
+.mat-list-item
+ {
+    /* color: #4e5e74 !important; */
+    font-size: 0.3rem;
+    height: 22px !important;
+    margin-bottom: 4px;
+}
+/* styling the container of the links */
+
+
+/* .mat-list-item:hover 
+{
+    color: #437ca1 !important;
+} */
+/* when hovering the colour of the text brightens */
+
+.edit{
+    color: rgb(92, 84, 139) ;
+}
+
+.delete{
+    color: rgb(192, 72, 72);;
+}
+
+.edit:hover{
+    color: rgb(34, 0, 255);
+}
+
+
+.delete:hover{
+    color: rgb(248, 1, 1);;
+}
+

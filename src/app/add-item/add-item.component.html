@@ -1,1 +1,62 @@
-<p>add-item works!</p>
+<div class="container-fluid page">
+
+  
+    <div class="d-flex page__box p-3 mt-2">Add Item</div>
+    <div class="page__content shadow p-3 position-relative">
+
+      
+      <form class="mt-5">
+        <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label" for="fname">Product Type </label>
+        <div class="col-sm-6">
+            <select class="form-control form-select" name="fname" id="pin" [(ngModel)] = "itemType">
+                    <!-- <option value="">--Please choose an option--</option> -->
+                    <option value="Flat bread" >Flat bread</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Starters">Starters</option>
+                    <option value="Mexican">Mexican </option>
+                    <option value="Chinese">Chinese </option>
+            </select>
+        </div>
+        </div>
+
+
+        <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label" for="pin">Product Code</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="pin" name="pin"  size="50" [(ngModel)] = "itemCode">
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+             <label class="col-sm-2 col-form-label" for="fname">Product Title</label>
+          <div class="col-sm-6">
+             <input class="form-control" type="text" id="fname" name="fname" size="50" [(ngModel)] = "itemName">
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+            <label class="col-sm-2 col-form-label" for="pin">Cost Per Item</label>
+        <div class="col-sm-6">
+             <input class="form-control"  type="text" id="pin" name="pin"  size="50" [(ngModel)] = "pricePerItem"> </div>
+       
+        </div>
+  
+      <div class="form-group row mb-2">
+        <label class="col-sm-2 col-form-label" for="fname">Total Stock</label>
+      <div class="col-sm-6">
+          <input class="form-control" type="text" id="fname" name="fname" size="50" [(ngModel)] = "totalStock">
+      </div>
+      </div>
+  
+      
+           
+      <button type="submit" class="btn btn-primary mt-5" style="margin-left: 350px;" (click) = "InsertFoodItemData()" routerLink="/FoodMenu" routerLinkActive="list-item-active">Add Item</button>
+         
+       </form>
+     <div class="page__content-data position-absolute text-center">
+   
+     </div>
+   </div>
+ </div>

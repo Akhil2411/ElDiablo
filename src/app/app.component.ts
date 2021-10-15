@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ElDiablo';
+
+
+  sideBarOpen=true;   // sidebar open by default
+
+  sidebarToggler(){
+    this.sideBarOpen=!this.sideBarOpen;  //reverse the case to open and close
+  }
 }

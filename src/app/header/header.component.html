@@ -1,1 +1,42 @@
-<p>header works!</p>
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <!-- inside the row we want button and username..and when we click the username side down arrow...logout option should be there -->
+        
+        <!-- first we put the icon for toggling the navigation bar -->
+         <!-- We also add a function for toggling the navigation bar on click of the maticon button -->
+        <button mat-icon-button (click)="toggleSidebar()"><mat-icon>menu</mat-icon></button>
+
+
+        
+        <div class="row mr-2 ml-auto">
+            <ul class="row m-0 align-items-center">
+              <li>
+
+                <!-- when the image or username or downarrow is clicked logout should pop out -->
+                <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+
+
+                <!-- UserImage to be displayed -->
+                  <img src="https://images2.alphacoders.com/108/1085778.jpg" alt="" class="user-image mr-1 p-2" />
+      
+                  Admin
+                  <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+
+                </button>
+
+
+                <!-- Define the logout component that should pop out..defined with #menu -->
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    Logout
+                  </button>
+                </mat-menu>
+
+                
+              </li>
+            </ul>
+          </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>
