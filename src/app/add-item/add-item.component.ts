@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FoodItem } from '../food-item';
 import { FoodItemService } from '../food-item.service';
 
@@ -23,7 +24,7 @@ export class AddItemComponent implements OnInit {
   totalStock?:number;
 
   
-  constructor(private foodItemService : FoodItemService) { }
+  constructor(private foodItemService : FoodItemService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +42,13 @@ export class AddItemComponent implements OnInit {
     this.foodItemService.InsertFoodItem(food).subscribe(
       data => {
         this.GetAllFoodDetails();
+        this.snackBar.open(data.toString(),'',{
+          duration:5000,
+          verticalPosition:'top'
+        });
+        this.foodItemService.filter('Register click');
       }
+      
     );
   }
   GetAllFoodDetails(){
