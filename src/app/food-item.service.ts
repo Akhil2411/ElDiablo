@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { FoodItem } from './food-item';
 
 @Injectable({
@@ -11,6 +11,10 @@ export class FoodItemService {
   url:string="https://localhost:44324/api/FoodItem";
 
   constructor(private http:HttpClient) { }
+
+
+  formData!:FoodItem;
+
 
   GetAllFoodItem()
   {
@@ -39,5 +43,16 @@ export class FoodItemService {
     return this.http.delete(this.url+'/deleteFoodItem/'+itemId);
   }
 
-
+  
+  private _listeners=new Subject<any>();
+  listen():Observable<any>{
+    return this._listeners.asObservable();
+  }
+  
+  filter(filterBy:string){
+    this._listeners.next(filterBy);
+  }
+  
 }
+  
+

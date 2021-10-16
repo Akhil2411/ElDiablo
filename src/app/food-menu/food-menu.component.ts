@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodItem } from '../food-item';
 import { FoodItemService } from '../food-item.service';
+import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
+
+import { EditFoodComponent } from 'src/app/edit-food/edit-food.component';
 
 @Component({
   selector: 'app-food-menu',
@@ -24,7 +27,7 @@ export class FoodMenuComponent implements OnInit {
 
   display = "none";
   
-  constructor(private foodItemService : FoodItemService) { 
+  constructor(private foodItemService : FoodItemService,private dialog:MatDialog) { 
     this.GetAllFoodDetails();
   }
 
@@ -86,16 +89,6 @@ export class FoodMenuComponent implements OnInit {
   }
 
 
-  //Model
-  openModal() {
-    this.display = "block";
-  }
-  onCloseHandled() {
-    this.display = "none";
-  }
-//Modelcomplete
-
-
 
 onItemIdValueChanged(event : any){
   this.foodItemDetail.ItemId = this.itemId;
@@ -127,10 +120,14 @@ onTotalStockValueChanged(event : any){
  
 }
 
-
-clickEventTrigger(itemId:any){
-this.openModal();
-this.GetFoodItemById(itemId);
+onEdit(item:FoodItem){
+  this.foodItemService.formData=item;
+  const dialogConfig=new MatDialogConfig();
+  dialogConfig.disableClose=true;
+  dialogConfig.autoFocus=true;
+  dialogConfig.width="70%";
+  this.dialog.open(EditFoodComponent,dialogConfig);
 }
+
 
 }

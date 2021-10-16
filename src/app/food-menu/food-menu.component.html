@@ -1,49 +1,3 @@
-
-    <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
-         <div class="modal-dialog modal-dialog-centered" role="document">
-               <div class="modal-content">
-                         <div class="modal-header">
-                           <h4 class="modal-title">Update Food Details</h4>
-                           <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                         </div>
-                         <div class="modal-body">
-
-
-                          <div class="  col-md-6 col-sm-4" style="margin-left: 20px;">
-                         
-                        <div class="form-group ">
-                         <label for="itemId1" style="margin-top: 5px;">Item ID</label>
-                         <input  [(ngModel)] = "itemId" (change) = "onItemIdValueChanged($event)"  type="text" name="itemId1" id="itemId1" class="form-control border border-primary">
-                        </div>
-                         <label for="itemCode1" style="margin-top: 5px;">Item Code</label>
-                         <input [(ngModel)] = "itemCode" (change) = "onItemCodeValueChanged($event)" type="text" name="itemCode1" id="itemCode1" class="form-control border border-primary">
-                         <label for="itemName1" style="margin-top: 5px;">Item Name</label>
-                         <input   [(ngModel)] = "itemName" (change) = "onItemNameValueChanged($event)" type="text" name="itemName1" id="itemName1" class="form-control border border-primary">
-                         <label  for="itemType1" style="margin-top: 5px;">Item Type</label>
-                         <input  [(ngModel)] = "itemType" (change) = "onItemTypeValueChanged($event)" type="text" name="itemType1" id="itemType1" class="form-control border border-primary">
-                         <label  for="pricePerItem1" style="margin-top: 5px;">Price Per Item</label>
-                         <input   [(ngModel)] = "pricePerItem" (change) = "onPricePerItemValueChanged($event)" type="text" name="pricePerItem1" id="pricePerItem1" class="form-control border-primary ">
-                         <label  for="totalStock1" style="margin-top: 5px;">Total Stocks</label>
-                         <input   [(ngModel)] = "totalStock" (change) = "onTotalStockValueChanged($event)" type="text" name="totalStock1" id="totalStock1" class="form-control border-primary ">
-                         <br>
-                         <!-- <button   class="btn btn-primary" (click) = "InsertCustomerData()">Add Customer</button> &nbsp;
-                         <button [disabled] = "isDisabled" (click) = "UpdateCustomerDetails()" class="btn btn-warning">Update Customer</button> -->
-                     
-                     
-                      </div>
-                          </div>
-
-
-                          <div class="modal-footer">
-                           <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
-                           <button type="button" class="btn btn-primary" (click) = "UpdateFoodItem()">Save changes</button>
-                          </div>
-
-                </div>
-          </div>
-    </div>
-
-
 <div class="container-fluid page">
   <!-- Containerfluid is a bootstrap class that takes the entire width of the page and page her is a user defined class -->
 
@@ -80,7 +34,7 @@
               <td>{{ items.PricePerItem}} Ruppes</td>
               <td>{{ items.TotalStock}} items</td>
               <td>
-                <button mat-icon-button mat-list-item class="edit btn-warning" href="" (click)="openModal();GetFoodItemById(items.ItemId)" style="border-radius: 50%;width:30px ; height: 50px;padding-left: 3px;"><mat-icon>create</mat-icon></button>
+                <button mat-icon-button mat-list-item class="edit btn-warning" href="" (click)="onEdit(items)" style="border-radius: 50%;width:30px ; height: 50px;padding-left: 3px;"><mat-icon>create</mat-icon></button>
               </td>
                <td>
                   <a mat-list-item class="delete" (click)="DeleteFoodItem(items.ItemId)"><mat-icon>delete</mat-icon></a>

@@ -1,0 +1,130 @@
+<div class="d-flex justify-content-between">
+    <h4 style="padding-left: 15px;color: rgb(72, 13, 212);">Edit Food Item</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</div>
+
+<div style="overflow: auto;height:450px;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        
+       <!-- =====================ItemId=================== -->
+       
+        <div class="m-3 input-group">
+           <div class="input-group-prepend">
+               <span class="input-group-text">Item ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+           </div>
+           <input readonly="readonly" type="text" class="form-control" name="ItemId" #ItemId="ngModel" [(ngModel)]="service.formData.ItemId">
+
+       </div>
+        
+        <!-- =============================================== -->
+
+
+
+        <!-- =====================ItemCode=================== -->
+       
+        
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Item Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+ 
+ 
+            </div>
+            <input type="text" required class="form-control" name="ItemCode" #ItemCode="ngModel" [(ngModel)]="service.formData.ItemCode">
+ 
+ 
+        </div>
+
+
+        <!-- =============================================== -->
+        
+        
+        
+        
+        <!-- =====================ItemName=================== -->
+                         
+               
+        
+        <div class="m-3 input-group">
+           <div class="input-group-prepend">
+               <span class="input-group-text">Item Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+
+           </div>
+           <input type="text" required class="form-control" name="ItemName" #ItemName="ngModel" [(ngModel)]="service.formData.ItemName">
+
+
+       </div>
+
+      <!-- =============================================== -->
+
+
+       <!-- =====================ItemType=================== -->
+
+
+       <div class="m-3 input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Item Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+
+        </div>
+        <input type="text" required class="form-control" name="ItemType" #ItemType="ngModel" [(ngModel)]="service.formData.ItemType">
+
+
+       </div>
+
+
+
+
+
+       <!-- =============================================== -->
+
+
+
+
+
+         <!-- =====================Price Per Item=================== -->
+
+    
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Price Per Item&nbsp;</span>
+    
+    
+            </div>
+            <input type="text" required class="form-control" name="PricePerItem" #PricePerItem="ngModel" [(ngModel)]="service.formData.PricePerItem">
+    
+    
+           </div>
+
+
+
+         <!-- =============================================== -->
+
+    <!-- =====================Total Stock=================== -->
+
+    
+    <div class="m-3 input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Total Stock &nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+
+        </div>
+        <input type="text" required class="form-control" name="TotalStock" #TotalStock="ngModel" [(ngModel)]="service.formData.TotalStock">
+
+
+       </div>
+
+
+
+     <!-- =============================================== -->
+
+       <button class="m-3 btn-primary" mat-raised-button  type="submit" [disabled]="form.invalid" >Update Item</button>
+
+
+    </form>
+</div>
+

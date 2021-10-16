@@ -24,6 +24,10 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HomeComponent } from './home/home.component';
 import { FrontEndComponent } from './front-end/front-end.component';
+import { EditFoodComponent } from './edit-food/edit-food.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -41,6 +45,7 @@ import { FrontEndComponent } from './front-end/front-end.component';
     LogoutComponent,
     HomeComponent,
     FrontEndComponent,
+    EditFoodComponent
   
    
   ],
@@ -58,9 +63,12 @@ import { FrontEndComponent } from './front-end/front-end.component';
     MatListModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EditFoodComponent]
 })
 export class AppModule { }
