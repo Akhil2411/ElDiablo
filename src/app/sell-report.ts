@@ -1,7 +1,7 @@
 export class SellReport {
     OrderId?:number ;
     CustomerName?:string;
-    ContactNumber?:number ;
+    ContactNumber?:string ;
     OrderDate?:string ;
     OrderAmount?:number ;
 

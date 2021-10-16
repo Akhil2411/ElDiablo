@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EditReportComponent } from '../edit-report/edit-report.component';
 import { SellReport } from '../sell-report';
 import { SellReportService } from '../sell-report.service';
+
 
 @Component({
   selector: 'app-sell-report',
@@ -10,6 +13,7 @@ import { SellReportService } from '../sell-report.service';
 export class SellReportComponent implements OnInit {
 
 
+  
   sellReportDetails?:SellReport[];
 
   OrderId?:number ;
@@ -19,7 +23,7 @@ export class SellReportComponent implements OnInit {
   OrderAmount?:number ;
 
   
-  constructor(private sellReportService : SellReportService) { 
+  constructor(private sellReportService : SellReportService,private dialog:MatDialog) { 
     this.GetAllOrderDetails();
   }
 
@@ -37,5 +41,15 @@ export class SellReportComponent implements OnInit {
     );
   
   }
+
+  onEdit(order:SellReport){
+    this.sellReportService.formData=order;
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    this.dialog.open(EditReportComponent,dialogConfig);
+  }
+
 
 }

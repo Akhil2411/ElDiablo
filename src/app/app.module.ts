@@ -28,6 +28,7 @@ import { EditFoodComponent } from './edit-food/edit-food.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditReportComponent } from './edit-report/edit-report.component';
 
 
 
@@ -45,7 +46,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     LogoutComponent,
     HomeComponent,
     FrontEndComponent,
-    EditFoodComponent
+    EditFoodComponent,
+    EditReportComponent
   
    
   ],
@@ -69,6 +71,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[EditFoodComponent]
+  entryComponents:[EditFoodComponent,EditReportComponent]
 })
 export class AppModule { }
