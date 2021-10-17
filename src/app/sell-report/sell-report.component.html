@@ -28,7 +28,7 @@
                   <button mat-icon-button mat-raised-button mat-list-item class="edit btn-warning" (click)="onEdit(items)" style="border-radius: 50%;width:30px ; height: 50px;padding-left: 3px;"><mat-icon>create</mat-icon></button>
                 </td>
                  <td>
-                    <a mat-list-item class="delete"><mat-icon>delete</mat-icon></a>
+                  <a mat-list-item class="delete" (click)="DeleteOrderItem(items.OrderId)" ><mat-icon>delete</mat-icon></a>
                 </td>
                 
             </tr>

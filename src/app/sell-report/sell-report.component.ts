@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditReportComponent } from '../edit-report/edit-report.component';
 import { SellReport } from '../sell-report';
 import { SellReportService } from '../sell-report.service';
@@ -23,7 +24,7 @@ export class SellReportComponent implements OnInit {
   OrderAmount?:number ;
 
   
-  constructor(private sellReportService : SellReportService,private dialog:MatDialog) { 
+  constructor(private sellReportService : SellReportService,private dialog:MatDialog,private snackBar:MatSnackBar) { 
     this.GetAllOrderDetails();
   }
 
@@ -51,5 +52,23 @@ export class SellReportComponent implements OnInit {
     this.dialog.open(EditReportComponent,dialogConfig);
   }
 
+  DeleteOrderItem(orderId : any){
+    if(confirm("Are You sure to Delete?")){
+
+      this.sellReportService.DeleteOrder(orderId).subscribe(
+        data => {
+          this.GetAllOrderDetails();
+          this.snackBar.open(data.toString(),'',{
+            duration:5000,
+            verticalPosition:'top'
+          })
+        }
+      );
+
+
+    }
+   
+    
+  }
 
 }

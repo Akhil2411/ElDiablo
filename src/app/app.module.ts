@@ -33,6 +33,7 @@ import { EditReportComponent } from './edit-report/edit-report.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { EditReportComponent } from './edit-report/edit-report.component';
     HomeComponent,
     FrontEndComponent,
     EditFoodComponent,
-    EditReportComponent
+    EditReportComponent,
+    
   
    
   ],

@@ -1,10 +1,78 @@
 <div class="container-fluid page">
-     <div class="d-flex page__box p-3 mt-2">Add Sell</div>
-     <div class="page__content shadow p-3 position-relative">
+  <div class="d-flex page__box p-3 mt-2">Add Sell</div>
+  <div class="page__content shadow p-3 position-relative">
 
-      
-      <div class="page__content-data position-absolute text-center">
-       
-      </div>
+   <h3 class="text-primary">Enter Customer Details</h3>
+   <hr>
+   <form class="form-inline">
+     <label for="name">Customer Name:</label>
+     <input type="text" id="name" placeholder="Enter Name" name="names" [(ngModel)]="customerName">
+ 
+     <label for="num">Contact Number:</label>
+     <input type="text" id="num" placeholder="Enter Number" name="nums" [(ngModel)]="customerNumber">
+
+
+   </form>
+
+   <h3 class="text-primary" style="margin-top: 20px;">Select Product Details</h3>
+   <hr>
+   <form class="form-inline">
+     <label for="pro">Select product:</label>
+     <select id="Food"  class="form-control form-select" name="Food" id="pro" style="width:250px; margin-right: 15px;" [(ngModel)]="Food" >
+       <option value="">--Please choose an option--</option>
+        
+        <option *ngFor="let items of foodItemDetails;let i=index" [value]="items.ItemName" >{{items.ItemName}}</option>
+        
+     </select>
+ 
+     <label for="quantity">Enter Quantity:</label>
+     <input type="text" id="quantity" placeholder="Enter Quantity" name="nums" [(ngModel)]="quantity">
+
+     <button type="submit" (click)="AddtoCart()">Add Item</button>
+
+    
+
+
+
+   </form>
+
+   <table class="table table-stripped table-hover" style="margin-top: 20px;">
+     <thead class="table-primary">
+       <tr>
+         <th scope="col">Index</th>
+         <th scope="col">Product Name</th>
+         <th scope="col">Price Per Unit</th>
+         <th scope="col">Total Units</th>
+         <th scope="col">Total Cost</th>
+         <th scope="col">Delete</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr scope = "row" *ngFor = "let items of cartItemList;let i=index">
+             <td>{{ i+1 }}</td>
+             <td>{{ items.ItemName }}</td>
+             <td>{{ items.PricePerUnit }}</td>
+             <td>{{ items.TotalUnits}}</td>
+             <!-- <td>{{items.PricePerUnit * items.TotalUnits}} ruppes</td> -->
+             <td>{{getMultipliedValue(items.PricePerUnit , items.TotalUnits)}}</td>
+             <!-- <td>{{ items.TotalCost}}</td> -->
+             
+              <td>
+                 <a mat-list-item class="delete" (click)="deleteItem(i)"><mat-icon>delete</mat-icon></a>
+             </td>
+             
+         </tr>
+     </tbody>
+   </table>
+   
+   <p style="font-weight:bold;float: right;">Total Price:{{GrandTotal}}</p>
+
+   
+   <button type="submit" class="btn btn-danger" style="float: right;margin-top: 20px;margin-left: 10px;"(click)="clearOrder()">Clear Order</button>
+   <button type="submit" class="btn btn-primary" style="float: right;margin-top: 20px; " (click)="SaveOrder()">Save Order</button>
+
+    <div class="page__content-data position-absolute text-center">
+    
     </div>
-  </div>
+ </div>
+</div>

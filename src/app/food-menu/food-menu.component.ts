@@ -4,6 +4,7 @@ import { FoodItemService } from '../food-item.service';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 
 import { EditFoodComponent } from 'src/app/edit-food/edit-food.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-food-menu',
@@ -27,7 +28,7 @@ export class FoodMenuComponent implements OnInit {
 
   display = "none";
   
-  constructor(private foodItemService : FoodItemService,private dialog:MatDialog) { 
+  constructor(private foodItemService : FoodItemService,private dialog:MatDialog,private snackBar:MatSnackBar) { 
     this.GetAllFoodDetails();
   }
 
@@ -80,11 +81,21 @@ export class FoodMenuComponent implements OnInit {
   }
 
   DeleteFoodItem(itemId : any){
-    this.foodItemService.DeleteFoodItem(itemId).subscribe(
-      data => {
-        this.GetAllFoodDetails();
-      }
-    );
+    if(confirm("Are You sure to Delete?")){
+
+      this.foodItemService.DeleteFoodItem(itemId).subscribe(
+        data => {
+          this.GetAllFoodDetails();
+          this.snackBar.open(data.toString(),'',{
+            duration:5000,
+            verticalPosition:'top'
+          })
+        }
+      );
+
+
+    }
+   
     
   }
 
