@@ -54,7 +54,10 @@ color: #fff;
 }
 .navbar .btn:hover
 {
-background:#e11;
+/* background:#e11; */
+background: #00FF66;
+box-shadow: 0 0 15px #00FF66;
+border-color: #00FF66;
 }
 .content
 {
@@ -115,6 +118,7 @@ color: #fff;
 .content button:hover
 {
 background:#e11;
+
 }
 .content img
 {
@@ -178,6 +182,7 @@ margin-top: 30px;
 .cont button:hover
 {
 background-color: #e11;
+
 }
 .service
 {
@@ -248,7 +253,7 @@ height: 600px;
 .price h1
 {
 text-align: center;
-color: #fff;
+/* color: #fff; */
 }
 .price p
 {
@@ -267,7 +272,7 @@ align-items: center;
 {
 width: 300px;
 padding:25px;
-background-color: #fff;
+background-color: #ffffff;
 border-radius: 10px;
 text-align: center;
 margin-top: 100px;
@@ -298,9 +303,9 @@ padding-top: 20px;
 {
 width: 140px;
 height: 45px;
-background-color: #e33;
+background-color: rgb(0, 0, 0);
 border-radius: 25px;
-border:2px solid #e33;
+border:2px solid rgb(0, 0, 0);
 color: #fff;
 font-weight: bold;
 cursor: pointer;
@@ -309,7 +314,10 @@ transition: .5s;
 }
 .pricing .price-box div .btn:hover
 {
-background-color: #e11;
+/* background-color: #e11; */
+background: #e33;
+box-shadow: 0 0 15px #e33;
+border-color: #e33;
 }
 .footer-fluid
 {
@@ -355,3 +363,51 @@ a{
 html {
     scroll-behavior: smooth;
   }
+
+  .neon {
+    color: #fff;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px rgb(247, 51, 51),
+      0 0 80px rgb(255, 78, 87),
+      0 0 90px rgb(255, 73, 73),
+      0 0 100px rgb(208, 18, 214),
+      0 0 150px rgb(250, 17, 153);
+  }
+  
+
+
+  .neon2 {
+   
+        
+        
+      
+        
+          letter-spacing:0.1em;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 0.75px;
+        -webkit-text-stroke-color: #A9A9A9;
+        text-shadow: 
+                              8px 8px rgb(12, 12, 12),
+                              20px 20px #222;
+ 
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+

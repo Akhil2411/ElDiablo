@@ -89,19 +89,12 @@ export class AddSellComponent implements OnInit {
 
 
   deleteItem(index:any){
-    // const random = Math.floor(Math.random() * this.cartItemList.length);
-    // const el = this.cartItemList.splice(random, 1)[index];
-    // console.log(this.cartItemList[index].TotalCost,index);
-    // this.GrandTotal-=this.cartItemList[index].TotalCost!;
+
+
+    this.GrandTotal-=this.cartItemList[index].TotalCost!;
 
     const es = this.cartItemList.splice(index, 1);
 
-
-
-
-    // let data=this.foodItemDetails.filter((a:any)=>a.ItemName==this.Food);
-    // let multVal=this.getMultipliedValue(data[0].PricePerItem,this.quantity);
-    // this.decrementPrice(multVal);
 
     
   }
